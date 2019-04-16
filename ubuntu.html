@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384- Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous"> -->
+	<title></title>
+	<style type="text/css">
+		body{
+			margin:0px;
+			padding: 0px; 
+		}
+		.body img{
+			z-index: -100;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+		.top{
+			right: 0px;
+			color: white;
+			font-weight: bold;
+			background-color: #656565;
+			box-shadow:  2px 1px 10px 1px black;
+			position: absolute;
+			width: 98%;
+			height: 30px;
+			font-family: fantasy;
+			padding-top: 10px;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.dock1{
+			position: absolute;
+			background-color: transparent;
+			height: 100%;
+			width: 70px;
+		}
+		#dock2{
+			transition: .2s;
+			position: absolute;
+			background-color: #8103b9;
+			left: -2px;
+			border:.5px solid white; 
+			z-index: -1;
+			opacity: .5;
+			height: 100%;
+		}
+		#dock3{
+			z-index: 10;
+			transition: .2s;
+			top:50px;
+			position: absolute;
+		}
+		#dock3 img{
+			position: relative;
+			height: 50px;
+			width: 50px;
+		}
+		.dock2{
+            width: 0px;
+		}
+		.dock3{
+            left: -70px;
+		}
+		.dock1:hover > .dock2{
+			width: 70px;
+		}
+		.dock1:hover > .dock3{
+			left: 10px;
+		}
+		.icons{
+			float: right;
+		}
+        #iframe{
+        	transition: .2s;
+        	left: -1000px;
+        	position: absolute;
+        	margin-top: 130px;
+        	margin-left: 50%;
+        	transform: translateX(-50%);
+        	overflow: hidden;
+        	height: 0px;
+        	width: 700px;
+        }
+        #app{
+        	z-index: -2;
+        	position: absolute;
+        	left: 70px;
+        	top: 30px;
+        }
+	</style>
+</head>
+<body>
+	<img id="app" src="10.png" style="display: none;">
+	<div class="body">
+		<img src="5.jpg">
+<div class="top">ubuntu
+	<div class="icons">
+<i class="fas fa-wifi"></i>
+<i class="fas fa-battery-three-quarters"></i>
+(0:59,90%)
+<i class="fas fa-volume-up"></i>
+17:46
+<i class="fas fa-cog"></i>ROOT
+    </div>
+</div>
+<iframe id="iframe" src="https://www.google.com/" style="left: -1000px; height: 0px;"></iframe>
+<div class="dock1">
+	<div id="dock3" class="dock3">
+		<img src="1.png" id="appimg" onclick="application();stop();"><br>
+		<img src="2.png"><br>
+		<img src="3.png"  style="display: block;" id="firfox" onclick="firfox()"><br>
+		<img src="4.png" style="margin-top:400px;"><br>
+</div>
+	<div id="dock2" class="dock2">
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+	var f = document.getElementById('firfox');
+	var i = document.getElementById('iframe');
+	function firfox() {
+	if (i.style.left == "-1000px") {
+		i.style.left = "0px";
+		i.style.height = "400px";
+	}else{
+		i.style.left = "-1000px";
+		i.style.height = "0px";
+	}
+}
+var appli = document.getElementById('app');
+	function application() {
+	if (appli.style.display == "none") {
+		appli.style.display = "block";
+	}else{
+		appli.style.display = "none"
+	}
+};
+</script>
+</body>
+</html>
