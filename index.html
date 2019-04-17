@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384- Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384- Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 	<title></title>
 	<style type="text/css">
 		body{
@@ -15,9 +15,9 @@
 			width: 100%;
 		}
 		.top{
+			font-weight: bold;
 			right: 0px;
 			color: white;
-			font-weight: bold;
 			background-color: #656565;
 			box-shadow:  2px 1px 10px 1px black;
 			position: absolute;
@@ -55,16 +55,16 @@
 			height: 50px;
 			width: 50px;
 		}
-		.dock2{
+		.dk2{
             width: 0px;
 		}
-		.dock3{
+		.dk3{
             left: -70px;
 		}
-		.dock1:hover > .dock2{
+		.dock1:hover > .dk2{
 			width: 70px;
 		}
-		.dock1:hover > .dock3{
+		.dock1:hover > .dk3{
 			left: 10px;
 		}
 		.icons{
@@ -81,42 +81,154 @@
         	height: 0px;
         	width: 700px;
         }
-        #app{
+        #app,#app img{
         	z-index: -2;
         	position: absolute;
         	left: 70px;
         	top: 30px;
+        	width: 750px;
+        	height: 500px;
+        }
+        #app2,#app2 img{
+        	transition: .2s;
+        	left: -1000px;
+        	position: absolute;
+        	margin-top: 130px;
+        	margin-left: 50%;
+        	transform: translateX(-50%);
+        	z-index: -2;
+        	left: 70px;
+        	top: 30px;
+        	width: 750px;
+        	height: 450px;
+        }
+        #syssett,#syssett img{
+        	transition: .2s;
+        	position: absolute;
+        	margin-top: 120px;
+        	margin-left: 50%;
+        	transform: translateX(-60%);
+        	z-index: -2;
+        	left: 70px;
+        	top: 30px;
+        	width: 750px;
+        	height: 450px;
+        }
+        #sut,#sut img{
+        	transition: .2s;
+        	position: absolute;
+        	margin-top: 140px;
+        	margin-left: 50%;
+        	transform: translateX(-60%);
+        	z-index: -2;
+        	left: 70px;
+        	top: 30px;
+        	width: 480px;
+        	height: 300px;
+        }
+        #about,#about img{
+        	transition: .2s;
+        	position: absolute;
+        	margin-top: 120px;
+        	margin-left: 50%;
+        	transform: translateX(-60%);
+        	z-index: -2;
+        	left: 70px;
+        	top: 30px;
+        	width: 750px;
+        	height: 450px;
+        }
+        #dust,#dust img{
+        	transition: .2s;
+        	left: -1000px;
+        	position: absolute;
+        	margin-left: 50%;
+        	transform: translateX(-50%);
+        	z-index: -2;
+        	left: 70px;
+        	top: 30px;
+        	width: 750px;
+        	height: 450px;
+        }
+        #setting{
+        	top: 10px;
+        	position: absolute;;
+        	z-index: -2;
+        	float: right;
+        	right: 0px;
+        	width: 250px;
+        	height: 300px;
+        }
+        #setting ul{
+        	line-height: 25px;
+        	padding-top: 30px;
+        	padding-bottom: 8px;
+        	font-size: 14px;
+        	list-style: none;
+        	font-family: cursive;
+        	color: white;
+        	background-color: #393737;
         }
 	</style>
 </head>
 <body>
-	<img id="app" src="10.png" style="display: none;">
-	<div class="body">
-		<img src="5.jpg">
+<div class="body">
+<img src="5.jpg">
+
 <div class="top">ubuntu
-	<div class="icons">
-<i class="fas fa-wifi"></i>
-<i class="fas fa-battery-three-quarters"></i>
-(0:59,90%)
-<i class="fas fa-volume-up"></i>
-17:46
-<i class="fas fa-cog"></i>ROOT
-    </div>
+
+   <div class="icons">
+
+           <i class="fas fa-wifi"></i>
+
+           <i class="fas fa-battery-three-quarters"></i>(0:59,90%)
+
+           <i class="fas fa-volume-up"></i>17:46
+
+           <i class="fas fa-cog" onclick="setting()"></i>ROOT
+   </div>
 </div>
-<iframe id="iframe" src="https://www.google.com/" style="left: -1000px; height: 0px;"></iframe>
+
+<img id="app" src="10.png" style="display: none;">
+<img id="app2" src="11.png" style="left: -1000px; height: 0px;">
+<img id="syssett" src="12.png" style="display: none;">
+<img id="about" src="14.png" style="display: none;">
+<img id="sut" src="15.png" style="display: none;">
+<img id="dust" src="13.png" style="left: -1000px; height: 0px;margin-top: 620px;">
+<div id="setting" style="display: none;">
+	<ul>
+		<li onclick="about()" style="cursor: pointer;">About This Computer</li>
+		<li>Ubuntu Help...</li>
+		<li onclick="syssett()" style="cursor: pointer;">System Setting...</li>
+		<li>Lock</li>
+		<li>Gust Session</li>
+		<li>Root</li>
+		<li>Log Out...</li>
+		<li>Suspend</li>
+		<li onclick="sut()" style="cursor: pointer;">Shut Down</li>
+	</ul>
+</div>
+<iframe id="iframe" src="https://www.bing.com" style="left: -1000px; height: 0px;"></iframe>
+
+
+
 <div class="dock1">
-	<div id="dock3" class="dock3">
-		<img src="1.png" id="appimg" onclick="application();stop();"><br>
-		<img src="2.png"><br>
-		<img src="3.png"  style="display: block;" id="firfox" onclick="firfox()"><br>
-		<img src="4.png" style="margin-top:400px;"><br>
+	<div id="dock3" class="dk3">
+		<img src="1.png" id="appimg" onclick="application()"><br>
+		<img src="2.png"  onclick="file()"><br>
+		<img src="3.png" id="firfox" onclick="firfox()"><br>
+		<img src="4.png" style="margin-top:420px;" onclick="dust()"><br>
 </div>
-	<div id="dock2" class="dock2">
-    </div>
+
+<div id="dock2" class="dk2">
 </div>
+</div>
+
+
+
+
 </div>
 <script type="text/javascript">
-	var f = document.getElementById('firfox');
 	var i = document.getElementById('iframe');
 	function firfox() {
 	if (i.style.left == "-1000px") {
@@ -133,6 +245,72 @@ var appli = document.getElementById('app');
 		appli.style.display = "block";
 	}else{
 		appli.style.display = "none"
+	}
+	stop()
+};
+// 	var d2 = document.getElementById('dock2');
+// 	var d3 = document.getElementById('dock3');
+// 	function stop() {
+// 	if (appli.style.display = "none") {
+// 		d2.removeAttribute("class", "dk2");
+// 		d3.removeAttribute("class", "dk3");
+// 	}else{
+// 		d2.setAttribute("class", "dk2");
+// 		d3.setAttribute("class", "dk3"); 
+// 	}
+// };
+	var f = document.getElementById('app2');
+	function file() {
+	if (f.style.left == "-1000px") {
+		f.style.left = "0px";
+		f.style.height = "400px";
+	}else{
+		f.style.left = "-1000px";
+		f.style.height = "0px";
+	}
+};
+	var s = document.getElementById('setting');
+	function setting() {
+	if (s.style.display == "none") {
+		s.style.display = "block";
+	}else{
+		s.style.display = "none";
+	}
+}
+	var d = document.getElementById('dust');
+	function dust() {
+	if (d.style.left == "-1000px") {
+		d.style.left = "0px";
+		d.style.height = "400px";
+		d.style.marginTop = "130px";
+	}else{
+		d.style.left = "-1000px";
+		d.style.height = "0px";
+		d.style.marginTop = "620px";
+	}
+}
+	var ss = document.getElementById('syssett');
+	function syssett() {
+	if (ss.style.display == "none") {
+		ss.style.display = "block";
+	}else{
+		ss.style.display = "none"
+	}
+};
+	var ab = document.getElementById('about');
+	function about() {
+	if (ab.style.display == "none") {
+		ab.style.display = "block";
+	}else{
+		ab.style.display = "none"
+	}
+};
+	var st = document.getElementById('sut');
+	function sut() {
+	if (st.style.display == "none") {
+		st.style.display = "block";
+	}else{
+		st.style.display = "none"
 	}
 };
 </script>
