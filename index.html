@@ -169,11 +169,48 @@
         	color: white;
         	background-color: #393737;
         }
+        #bgchanger{
+        	position: absolute;
+        	margin-left: 30%;
+        	margin-top: 230px;
+        	z-index: 5;
+        	left: 70px;
+        }
+        .btn{
+        	width: 300px;
+        	background-color: blue;
+        	color: white;
+        	padding: 10px;
+            border:none;
+            border-radius: 5px; 
+        }
+        .url{
+        	height: 30px;
+        	width: 280px;
+        }
+        #middle{
+        	width: 800px;
+        	height: 100%;
+        	background-color: transparent;
+        	position: absolute;
+        	margin-left: 50%;
+        	transform: translateX(-50%);
+        }
 	</style>
 </head>
 <body>
+	<div id="middle">
+		
+	</div>
 <div class="body">
-<img src="5.jpg">
+<div id="bgchanger" style="display: none;">
+		<form name="form1" >
+<input class="url" type="text" name="massege" placeholder="copy a image url and paste here"><br><br>
+<input class="btn" type="button" name="submit" onclick="changebg()" value="change background image"><br><br>
+<input class="btn" type="button" name="submit" onclick="defaut()" value="defaut">
+    </form>
+</div>
+<img id="bgimageid" src="5.jpg">
 
 <div class="top">ubuntu
 
@@ -313,6 +350,27 @@ var appli = document.getElementById('app');
 		st.style.display = "none"
 	}
 };
+    var bgimg = document.getElementById('bgimageid');
+	var input = document.forms['form1']['massege'];
+	function changebg() {
+		bgimg.setAttribute("src", input.value);
+
+	}
+	var mdl = document.getElementById('middle');
+	var cb = document.getElementById('bgchanger');
+	mdl.addEventListener("click",function bgdisblock(){
+     	if (cb.style.display == "none") {
+     		cb.style.display = "block"
+     	}else{
+     		cb.style.display = "none"
+     	}
+     }
+     );
+	var bgimg = document.getElementById('bgimageid');
+	function defaut() {
+		bgimg.setAttribute("src", "5.jpg");
+
+	}
 </script>
 </body>
 </html>
